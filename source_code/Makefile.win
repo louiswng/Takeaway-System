@@ -1,0 +1,52 @@
+# Project: 项目2
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = 打印.o 动画输出.o 读入数据.o 派单.o 骑手路径.o 任务拆分.o 释放链表.o 鼠标键入.o 主函数.o
+LINKOBJ  = 打印.o 动画输出.o 读入数据.o 派单.o 骑手路径.o 任务拆分.o 释放链表.o 鼠标键入.o 主函数.o
+LIBS     = -L"E:/Devcpp/Dev-Cpp/MinGW64/lib" -L"E:/Devcpp/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -lgraphics64 -luuid -lmsimg32 -lgdi32 -limm32 -lole32 -loleaut32 -lwinmm -g3
+INCS     = -I"E:/Devcpp/Dev-Cpp/MinGW64/include" -I"E:/Devcpp/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"E:/Devcpp/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"E:/Devcpp/Dev-Cpp/MinGW64/include" -I"E:/Devcpp/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"E:/Devcpp/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"E:/Devcpp/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = 项目2.exe
+CXXFLAGS = $(CXXINCS) -g3
+CFLAGS   = $(INCS) -g3
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+打印.o: 打印.cpp
+	$(CPP) -c 打印.cpp -o 打印.o $(CXXFLAGS)
+
+动画输出.o: 动画输出.cpp
+	$(CPP) -c 动画输出.cpp -o 动画输出.o $(CXXFLAGS)
+
+读入数据.o: 读入数据.cpp
+	$(CPP) -c 读入数据.cpp -o 读入数据.o $(CXXFLAGS)
+
+派单.o: 派单.cpp
+	$(CPP) -c 派单.cpp -o 派单.o $(CXXFLAGS)
+
+骑手路径.o: 骑手路径.cpp
+	$(CPP) -c 骑手路径.cpp -o 骑手路径.o $(CXXFLAGS)
+
+任务拆分.o: 任务拆分.cpp
+	$(CPP) -c 任务拆分.cpp -o 任务拆分.o $(CXXFLAGS)
+
+释放链表.o: 释放链表.cpp
+	$(CPP) -c 释放链表.cpp -o 释放链表.o $(CXXFLAGS)
+
+鼠标键入.o: 鼠标键入.cpp
+	$(CPP) -c 鼠标键入.cpp -o 鼠标键入.o $(CXXFLAGS)
+
+主函数.o: 主函数.cpp
+	$(CPP) -c 主函数.cpp -o 主函数.o $(CXXFLAGS)
